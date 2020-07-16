@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <!-- Das neueste kompilierte und minimierte CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optionales Theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Das neueste kompilierte und minimierte JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | HexArcade</title>
@@ -8,24 +16,146 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
-    <script>
-      //var gameInstance = UnityLoader.instantiate("gameContainer", "Build/AgainAntoherBuildHexArcade.json", {onProgress: UnityProgress});
-    </script>
+    <style>
+        #starting-screen, #quellen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1;
+            margin: 10px;
+        }  
+        
+        #instruction {
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+        }
+        
+        #buttons{
+            position: inherit;
+            left: 50%;
+            transform: translate(-50%,0);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        
+        #game-button, #quellen-button {
+            margin: 5px;
+        }
+        
+        
+        .fullscreen, #title {
+            display: none;
+        }
+        
+        #quellen {
+            display: none;
+            flex-direction: column;
+            
+        }
+        
+        #quelen > span {
+            margin: 4px 0 4px 0;
+            text-align: justify;
+        }
+        
+        #close-button {
+            position: inherit;
+            right: 5px;
+            color: red;
+            font-size: 24px;
+        }
+        
+        #close-button:hover {
+            cursor: pointer;
+        }
+    </style>
   </head>
   <body>
-    <input id="show-button" type="button" value="GAME START"/>
-    <script>
-            document.getElementById("show-button").addEventListener("click", () => {
-                var gameInstance = UnityLoader.instantiate("gameContainer", "Build/HexarcadeBuild.json", {onProgress: UnityProgress});
-            });
-    </script>
+    <div id="starting-screen">
+        <div id="instruction">
+            <span>Instruction!</span>
+            <span>1. This is <b>NOT</b> the target export of our game, which means not everything is supported. For example, accelerometer from the phone.</span>
+            <span>2. This is only a trial version which can only be played on desktop browser.</span>
+            <span>3. The control are such as W A S D, which determine their respective direction.</span>
+        </div>
+        <br/>
+        <div id="buttons">
+            <input id="game-button" type="button" value="GAME START"/>
+            <input id="quellen-button" type="button" value="SOURCES"/>
+        </div>
+    </div>
+      
     <div class="webgl-content">
-      <div id="gameContainer" style="width: 1200px; height: 675px"></div>
+      <div id="gameContainer" style="width: 85vw;height: 90vh"></div>
       <div class="footer">
-        <div class="webgl-logo"></div>
+        <div class="webgl-logo" style="display: none;"></div>
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">HexArcade</div>
+        <div id="title">HexArcade</div>
       </div>
     </div>
+    
+    <div id="quellen">
+        <span id="close-button">X</span><br/><br/>
+        <span>Musik: <a href="https://freemusicarchive.org/music/Herr_Doktor/Time_for_Love/02_herr_doktor_-_time_for_love">https://freemusicarchive.org/music/Herr_Doktor/Time_for_Love/02_herr_doktor_-_time_for_love</a></span>
+        <span>Aktivierungssound: <a href="https://freesound.org/s/341024/">https://freesound.org/s/341024/</a></span>
+        <span>Cracked Tiles: <a href="https://soundcloud.com/marcus-apodaca-241156290/glass-break-stephan-schutze-958181291/">https://soundcloud.com/marcus-apodaca-241156290/glass-break-stephan-schutze-958181291/</a></span>
+        <span>Jump: <a href="https://freesound.org/s/404793/">https://freesound.org/s/404793/</a></span>
+        <span>Lose: <a href="https://freesound.org/s/404743/">https://freesound.org/s/404743/</a></span>
+        <span>Teleport: <a href="https://freesound.org/s/128590/">https://freesound.org/s/128590/</a></span>
+        <span>Velocity: <a href="https://freesound.org/s/257225/">https://freesound.org/s/257225/</a></span>
+        <span>Win: <a href="https://freesound.org/s/457547/">https://freesound.org/s/457547/</a></span>
+        <span>Hintergrund der Level entstammt dieser Textur: <a href="https://www.cgbookcase.com/textures/white-hexagonal-tiles-01">https://www.cgbookcase.com/textures/white-hexagonal-tiles-01</a></span>
+        
+        <div id="schriftarten">
+            <span>Font Styles: </span>
+            <ul>
+                <li>Highscore: <a href="https://www.1001fonts.com/edo-sz-font.html">https://www.1001fonts.com/edo-sz-font.html</a></li>
+                <li>Titel: <a href="https://www.fontspace.com/road-rage-font-f43310">https://www.fontspace.com/road-rage-font-f43310</a></li>
+                <li>Menü: <a href="https://www.fontspace.com/streamster-font-f38733">https://www.fontspace.com/streamster-font-f38733</a></li>
+            </ul>
+        </div>
+        
+        <div id="icons">
+            <span>Icons: </span>
+            <ul>
+                <li>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>
+                <li>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></li>
+            </ul>
+        </div>
+      </div>
+        
+      <script>
+          const gameButton = document.getElementById("game-button");
+          const quellenButton = document.getElementById("quellen-button");
+          const startingScreen = document.getElementById("starting-screen");
+          const quellen = document.getElementById("quellen");
+          const webglLogo = document.getElementsByClassName("webgl-logo")[0];
+          const closeButton = document.getElementById("close-button");
+          
+            gameButton.addEventListener("click", () => {
+                startingScreen.style.display = "none";
+                
+                var gameInstance = UnityLoader.instantiate("gameContainer", "Build/HexarcadeBuild.json", {onProgress: UnityProgress});
+                
+                webglLogo.style.display = "block";
+                document.getElementsByClassName("fullscreen")[0].style.display = "block";
+                document.getElementById("title").style.display = "block";
+            });
+          
+          quellenButton.addEventListener("click", () => {
+              startingScreen.style.display = "none";
+              quellen.style.display = "flex";
+              webglLogo.style.display = "block";
+          })
+          
+          closeButton.addEventListener("click", () => {
+              startingScreen.style.display = "block";
+              quellen.style.display = "none";
+              webglLogo.style.display = "none";
+          })
+    </script>
   </body>
 </html>
