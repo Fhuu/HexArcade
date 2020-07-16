@@ -32,6 +32,10 @@
             text-align: justify;
         }
         
+        #instruction-text {
+            font-size: 24px;
+        }
+        
         #buttons{
             position: inherit;
             left: 50%;
@@ -56,11 +60,6 @@
             
         }
         
-        #quelen > span {
-            margin: 4px 0 4px 0;
-            text-align: justify;
-        }
-        
         #close-button {
             position: inherit;
             right: 5px;
@@ -76,10 +75,10 @@
   <body>
     <div id="starting-screen">
         <div id="instruction">
-            <span>Instruction!</span>
+            <span id="instruction-text"><b>Instruction!!!</b></span>
             <span>1. This is <b>NOT</b> the target export of our game, which means not everything is supported. For example, accelerometer from the phone.</span>
-            <span>2. This is only a trial version which can only be played on desktop browser.</span>
-            <span>3. The control are such as W A S D, which determine their respective direction.</span>
+            <span>2. This is a trial version, which can be played in desktop browser, only.</span>
+            <span>3. Use the WASD Keys to move the ball.</span>
         </div>
         <br/>
         <div id="buttons">
@@ -99,15 +98,29 @@
     
     <div id="quellen">
         <span id="close-button">X</span><br/><br/>
-        <span>Musik: <a href="https://freemusicarchive.org/music/Herr_Doktor/Time_for_Love/02_herr_doktor_-_time_for_love">https://freemusicarchive.org/music/Herr_Doktor/Time_for_Love/02_herr_doktor_-_time_for_love</a></span>
-        <span>Aktivierungssound: <a href="https://freesound.org/s/341024/">https://freesound.org/s/341024/</a></span>
-        <span>Cracked Tiles: <a href="https://soundcloud.com/marcus-apodaca-241156290/glass-break-stephan-schutze-958181291/">https://soundcloud.com/marcus-apodaca-241156290/glass-break-stephan-schutze-958181291/</a></span>
-        <span>Jump: <a href="https://freesound.org/s/404793/">https://freesound.org/s/404793/</a></span>
-        <span>Lose: <a href="https://freesound.org/s/404743/">https://freesound.org/s/404743/</a></span>
-        <span>Teleport: <a href="https://freesound.org/s/128590/">https://freesound.org/s/128590/</a></span>
-        <span>Velocity: <a href="https://freesound.org/s/257225/">https://freesound.org/s/257225/</a></span>
-        <span>Win: <a href="https://freesound.org/s/457547/">https://freesound.org/s/457547/</a></span>
-        <span>Hintergrund der Level entstammt dieser Textur: <a href="https://www.cgbookcase.com/textures/white-hexagonal-tiles-01">https://www.cgbookcase.com/textures/white-hexagonal-tiles-01</a></span>
+        <div id="game-feature">
+            <span>Game feature: </span>
+            <ul>
+                <li>Visual Effects: <br/>
+                    <a href="https://www.youtube.com/watch?v=Juug5XTkat4&t=46s"style="margin-left: 10px;">https://www.youtube.com/watch?v=Juug5XTkat4&t=46s</a><br/>
+                    <small style="margin-left: 10px;">Quelle eines VFX Effekts der in etwas abgeänderter Form von mir verwendet wurde. Hat geholfen weitere Effekte mit dem Partikelsystem zu entwickeln.</small><br/>
+                </li>
+                <li>Hintergrund der Level entstammt dieser Textur: <a href="https://www.cgbookcase.com/textures/white-hexagonal-tiles-01">https://www.cgbookcase.com/textures/white-hexagonal-tiles-01</a></li>
+            </ul>
+        </div>
+        <div id="sounds">
+            <span>Sound: </span>
+            <ul>
+                <li>Musik: <a href="https://freemusicarchive.org/music/Herr_Doktor/Time_for_Love/02_herr_doktor_-_time_for_love">https://freemusicarchive.org/music/Herr_Doktor/Time_for_Love/02_herr_doktor_-_time_for_love</a></li>
+                <li>Aktivierungssound: <a href="https://freesound.org/s/341024/">https://freesound.org/s/341024/</a></li>
+                <li>Cracked Tiles: <a href="https://soundcloud.com/marcus-apodaca-241156290/glass-break-stephan-schutze-958181291/">https://soundcloud.com/marcus-apodaca-241156290/glass-break-stephan-schutze-958181291/</a></li>
+                <li>Jump: <a href="https://freesound.org/s/404793/">https://freesound.org/s/404793/</a></li>
+                <li>Lose: <a href="https://freesound.org/s/404743/">https://freesound.org/s/404743/</a></li>
+                <li>Teleport: <a href="https://freesound.org/s/128590/">https://freesound.org/s/128590/</a></li>
+                <li>Velocity: <a href="https://freesound.org/s/257225/">https://freesound.org/s/257225/</a></li>
+                <li>Win: <a href="https://freesound.org/s/457547/">https://freesound.org/s/457547/</a></li>
+            </ul>
+        </div>
         
         <div id="schriftarten">
             <span>Font Styles: </span>
